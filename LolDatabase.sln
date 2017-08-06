@@ -5,6 +5,8 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LolDatabase", "LolDatabase\LolDatabase.csproj", "{49E7FDD7-63E0-45E2-80BE-5A75C1D18A01}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LolApi", "..\LolApi\LolApi\LolApi.csproj", "{71CD0EE4-6E9C-40B9-9D61-8E1E16CC93FE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{49E7FDD7-63E0-45E2-80BE-5A75C1D18A01}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{49E7FDD7-63E0-45E2-80BE-5A75C1D18A01}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{49E7FDD7-63E0-45E2-80BE-5A75C1D18A01}.Release|Any CPU.Build.0 = Release|Any CPU
+		{71CD0EE4-6E9C-40B9-9D61-8E1E16CC93FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71CD0EE4-6E9C-40B9-9D61-8E1E16CC93FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71CD0EE4-6E9C-40B9-9D61-8E1E16CC93FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71CD0EE4-6E9C-40B9-9D61-8E1E16CC93FE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

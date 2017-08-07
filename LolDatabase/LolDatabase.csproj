@@ -8,7 +8,7 @@
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>LolDatabase</RootNamespace>
-    <AssemblyName>LolDatabase</AssemblyName>
+    <AssemblyName>LolDB</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -59,10 +59,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="LolDbContext.cs" />
-    <Compile Include="Parser.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="QueryLogger.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">

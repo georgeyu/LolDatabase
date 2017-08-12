@@ -74,7 +74,11 @@ namespace LolDatabase
         {
             var name = args.First();
             var summoner = api.GetSummoner(name);
-            db.Summoners.Add(summoner);
+            var count = db.Summoners.Where(x => x.accountId == summoner.accountId && x.id == summoner.id).Count();
+            if (count == 0)
+            {
+                db.Summoners.Add(summoner);
+            }
         }
 
         private static void HandleChampionsCommand()
@@ -110,8 +114,15 @@ namespace LolDatabase
             foreach (var matchSummary in matches)
             {
                 var matchID = matchSummary.gameId.ToString();
-                var match = api.GetMatch(matchID);
-                db.Matches.Add(match);
+                try
+                {
+                    var match = api.GetMatch(matchID);
+                    db.Matches.Add(match);
+                }
+                catch (WebException)
+                {
+                    log.WarnFormat("Failed to get match {0}.", matchID);
+                }
             }
         }
     }

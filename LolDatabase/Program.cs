@@ -104,12 +104,15 @@ namespace LolDatabase
             var matches = new List<MatchSummary>();
             foreach (var name in names)
             {
-                var matchList = api.GetRankedRiftMatchList(name);
-                log.InfoFormat("{0} matches for {1}.", matchList.matches.Count, name);
-                var nameMatches = matchList.matches.Where(x => !db.Matches.Any(y => x.platformId == y.platformId && x.gameId == y.gameId));
-                var nameMatchesCount = nameMatches.Count();
-                log.InfoFormat("{0} matches to add for {1}.", nameMatchesCount, name);
-                matches.AddRange(nameMatches);
+                var matchLists = api.GetRankedRiftMatchLists(name);
+                foreach (var matchList in matchLists)
+                {
+                    log.InfoFormat("{0} matches for {1}.", matchList.matches.Count, name);
+                    var nameMatches = matchList.matches.Where(x => !db.Matches.Any(y => x.platformId == y.platformId && x.gameId == y.gameId));
+                    var nameMatchesCount = nameMatches.Count();
+                    log.InfoFormat("{0} matches to add for {1}.", nameMatchesCount, name);
+                    matches.AddRange(nameMatches);
+                }
             }
             foreach (var matchSummary in matches)
             {
